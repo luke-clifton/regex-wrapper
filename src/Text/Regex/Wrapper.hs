@@ -95,6 +95,7 @@ parseMatchedEitherWith reg str = do
 newtype Matched str (pat :: Symbol) = Matched str
     deriving newtype (Show, Eq, Ord, Hashable, FoldCase)
 
+-- | Extract the wrapped @str@ type.
 asStr :: Matched str pat -> str
 asStr (Matched str) = str
 
