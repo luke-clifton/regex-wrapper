@@ -1,6 +1,6 @@
 cabal-version:       2.4
 name:                regex-wrapper
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Types that can only be constructed if they match a regular expression
 description:         Provides tooling for working with types whose values must
                      match a regular expression provided in the type.
@@ -28,6 +28,5 @@ library
     , bytestring
     , aeson
     , containers
-    , case-insensitive
   hs-source-dirs:      src
   default-language:    Haskell2010

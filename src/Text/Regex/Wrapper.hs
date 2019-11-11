@@ -29,7 +29,6 @@ import GHC.TypeLits
 import Text.Regex.TDFA as TDFA
 import Data.Hashable
 import Data.Aeson
-import Data.CaseInsensitive as CI
 
 data RegexError str = NoMatch (MatchError str) | CompileError String
     deriving Show
@@ -93,7 +92,7 @@ parseMatchedEitherWith reg str = do
 -- | A wrapper type that can only be constructed if the underlying string
 -- type matches the regular expression in @pat@.
 newtype Matched str (pat :: Symbol) = Matched str
-    deriving newtype (Show, Eq, Ord, Hashable, FoldCase)
+    deriving newtype (Show, Eq, Ord, Hashable)
 
 -- | Extract the wrapped @str@ type.
 asStr :: Matched str pat -> str
