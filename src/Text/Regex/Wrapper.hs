@@ -52,7 +52,7 @@ prettyMatchError err
 
 -- | A compiled regular expression that can produce @`Matched` str pat@
 -- values.
-newtype RegexPat (pat :: Symbol) = RegexPat { unwrap :: TDFA.Regex }
+newtype RegexPat (pat :: Symbol) = RegexPat TDFA.Regex
 
 -- | Create a @`Regex`@ that can be used to construct @`Matched`@ values
 -- when used with @`parseMatchedWith`@. This allows you to compile
