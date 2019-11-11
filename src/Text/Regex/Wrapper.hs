@@ -92,10 +92,11 @@ parseMatchedEitherWith reg str = do
 
 -- | A wrapper type that can only be constructed if the underlying string
 -- type matches the regular expression in @pat@.
-newtype Matched str (pat :: Symbol) = Matched
-    { asStr :: str -- ^ Extract the underlying string type
-    }
+newtype Matched str (pat :: Symbol) = Matched str
     deriving newtype (Show, Eq, Ord, Hashable, FoldCase)
+
+asStr :: Matched str pat -> str
+asStr (Matched str) = str
 
 instance (KnownSymbol pat, RegexLike Regex str, Read str)
     => Read (Matched str pat) where
