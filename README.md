@@ -1,3 +1,5 @@
+### Experimental
+
 This library allows you to create types that are guaranteed to contain a
 string that matches a given regular expression which is expressed at the
 type level.
