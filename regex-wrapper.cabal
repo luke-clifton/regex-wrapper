@@ -20,7 +20,7 @@ source-repository head
 library
   exposed-modules: Text.Regex.Wrapper
   build-depends:
-    , base ^>=4.12.0.0
+    , base >=4.12 && <5.0
     , regex-tdfa
     , hashable
     , string-conv
